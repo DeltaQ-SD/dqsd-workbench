@@ -15,6 +15,7 @@ let
   iHaskellSrc = sources.IHaskell;
 
   myHaskellPackages = hp: [
+   hp.contra-tracer
    hp.Chart
    hp.HaTeX
    hp.diagrams
