@@ -26,7 +26,8 @@ let
    hp.ihaskell-graphviz
    hp.ihaskell-hatex
    hp.ihaskell-juicypixels
-   hp.ihaskell-widgets
+   # ihaskell-widgets can cause compilation issues
+   # hp.ihaskell-widgets
    ];
 
   mySystemPackages = sp: [
