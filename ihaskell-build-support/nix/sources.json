@@ -1,4 +1,16 @@
 {
+    "IHaskell": {
+        "branch": "dqsd-patches",
+        "description": "A Haskell kernel for the Jupyter project.",
+        "homepage": "",
+        "owner": "DeltaQ-SD",
+        "repo": "IHaskell",
+        "rev": "8fb4ad7682340215231c9c4eb83e0614fcba4e23",
+        "sha256": "1kavj2a4zdrj791kyin4smrpgpqi1hhhqykzqa5w4bpa4glik87m",
+        "type": "tarball",
+        "url": "https://github.com/DeltaQ-SD/IHaskell/archive/8fb4ad7682340215231c9c4eb83e0614fcba4e23.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "haskellNix": {
         "branch": "master",
         "description": "Alternative Haskell Infrastructure for Nixpkgs",
