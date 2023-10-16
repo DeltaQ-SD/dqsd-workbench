@@ -1,0 +1,8 @@
+packages: .
+
+source-repository-package
+  type: git
+  location: https://github.com/DeltaQ-SD/dqsd-classes.git
+  tag: 17b978d7d2e3aec0dce6f29ca9b289680f4011d2
+  subdir: .
+  --sha256: 2ByuLGFo/P55lpJagda2uHXqWtlXqX/uRLYDkARExtw=

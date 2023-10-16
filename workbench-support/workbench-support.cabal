@@ -11,7 +11,7 @@ cabal-version:      3.0
 --   http://haskell.org/cabal/users-guide/
 --
 -- The name of the package.
-name:               workbenc-support
+name:               workbench-support
 
 -- The package version.
 -- See the Haskell package versioning policy (PVP) for standards
@@ -65,17 +65,18 @@ library
     import:           warnings
 
     -- Modules exported by the library.
-    exposed-modules:  DeltaQ.Workbench
+    exposed-modules:  DeltaQ.Workbench.Piecewise
 
     -- Modules included in this library but not exported.
-    -- other-modules:
+    other-modules:    DeltaQ.Workbench.Common
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
 
     -- Other library packages from which modules are imported.
     -- at least GHC 9.4.5
-    build-depends:    base >= 4.17.1.0 
+    build-depends:    base >= 4.17.1.0
+                    , dqsd-classes
 
     -- Directories containing source files.
     hs-source-dirs:   src

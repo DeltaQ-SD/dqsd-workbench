@@ -17,9 +17,14 @@ let
           "${ghcNixVersion}" = pkgs'.haskell.packages."${ghcNixVersion}".override {
             overrides = self: super: let
               localAddPkg = n: s: c: haskell.lib.dontCheck (self.callCabal2nix n s c);
-            in {
-              # This is where the additional packages are brought into scope
+            in rec {
+ #
+ # This is where the additional packages are brought into scope
+ #
               workbench-support = localAddPkg "workbench-support" ./workbench-support {};
+              dqsd-classes      = localAddPkg "dqsq-classes" sources.dqsd-classes {};
+
+ #
             };
           };
         };

@@ -1,3 +1,0 @@
-module DeltaQ.Workbench
-  ()
-where
