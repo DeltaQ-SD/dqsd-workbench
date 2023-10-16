@@ -23,7 +23,7 @@ let
  #
               workbench-support = localAddPkg "workbench-support" ./workbench-support {};
               dqsd-classes      = localAddPkg "dqsq-classes" sources.dqsd-classes {};
-
+              dqsd-piecewise-poly = localAddPkg "dqsq-piecewise-poly" sources.dqsd-piecewise-poly {};
  #
             };
           };
@@ -35,11 +35,12 @@ let
 
 
   myHaskellPackages = hp: [
+   hp.workbench-support
+
    hp.contra-tracer
    hp.Chart
    hp.HaTeX
    hp.diagrams
-   hp.workbench-support
 
    hp.ihaskell-basic
    hp.ihaskell-blaze

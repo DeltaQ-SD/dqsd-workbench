@@ -77,6 +77,7 @@ library
     -- at least GHC 9.4.5
     build-depends:    base >= 4.17.1.0
                     , dqsd-classes
+                    , dqsd-piecewise-poly
 
     -- Directories containing source files.
     hs-source-dirs:   src

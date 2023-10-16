@@ -17,6 +17,12 @@
         "rev": "17b978d7d2e3aec0dce6f29ca9b289680f4011d2",
         "type": "git"
     },
+    "dqsd-piecewise-poly": {
+        "branch": "main",
+        "repo": "https://github.com/DeltaQ-SD/dqsd-piecewise-poly.git",
+        "rev": "61bf285818fb54fd7d41c86285306983d86d1273",
+        "type": "git"
+    },
     "haskellNix": {
         "branch": "master",
         "description": "Alternative Haskell Infrastructure for Nixpkgs",
