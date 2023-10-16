@@ -1,24 +1,40 @@
-{ sources ? import ./ihaskell-build-support/nix/sources.nix {}
+{ sources ? import ./workbench-support/nix/sources.nix {}
 , haskellNix ? import sources.haskellNix {}
-, pkgs ? import
-  # haskell.nix provides access to the nixpkgs pins which are used by our CI,
-  # hence you will be more likely to get cache hits when using these.
-  # But you can also just use your own, e.g. '<nixpkgs>'.
-  haskellNix.sources.nixpkgs-unstable
-  # These arguments passed to nixpkgs, include some patches and also
-  # the haskell.nix functionality itself as an overlay.
-  haskellNix.nixpkgsArgs
 , ghcNixVersion ? "ghc94"
 , index-state ? "2023-10-13T21:48:44Z"
 }:
 let
-  iHaskellSrc = sources.IHaskell;
+  pkgs =
+    let pkgs' = import haskellNix.sources.nixpkgs-unstable {};
+        lib = pkgs'.lib;
+        args' = lib.recursiveUpdate haskellNix.nixpkgsArgs {config = myOverlay;};
+    in import haskellNix.sources.nixpkgs-unstable args';
+
+  myOverlay = {
+    packageOverrides = pkgs': rec {
+      haskell = pkgs'.haskell // {
+        packages = pkgs'.haskell.packages // {
+          "${ghcNixVersion}" = pkgs'.haskell.packages."${ghcNixVersion}".override {
+            overrides = self: super: let
+              localAddPkg = n: s: c: haskell.lib.dontCheck (self.callCabal2nix n s c);
+            in {
+              # This is where the additional packages are brought into scope
+              workbench-support = localAddPkg "workbench-support" ./workbench-support {};
+            };
+          };
+        };
+      };
+    };
+  };
+
+
 
   myHaskellPackages = hp: [
    hp.contra-tracer
    hp.Chart
    hp.HaTeX
    hp.diagrams
+   hp.workbench-support
 
    hp.ihaskell-basic
    hp.ihaskell-blaze
@@ -50,12 +66,16 @@ let
     sp.graphviz
   ];
 
+  myPythonPackages = pp: [
+  ];
+
+  iHaskellSrc = sources.IHaskell;
 in
 import "${iHaskellSrc}/release.nix" {
   compiler = ghcNixVersion;
   nixpkgs = pkgs;
   packages= myHaskellPackages;
-  pythonPackages = (_: []);
+  pythonPackages = myPythonPackages;
   rtsopts = "-Iw15 -H64m -M8G -N2"; # added to the iHaskell command line.
   staticExecutable = false;
   systemPackages = mySystemPackages;
