@@ -10,9 +10,9 @@ source-repository-package
 source-repository-package
   type: git
   location: https://github.com/DeltaQ-SD/dqsd-piecewise-poly.git
-  tag: 920cdc367c716644927bd58856234961b7051112
+  tag: 043bd3fddb4525787618da53a568386795770d0f
   subdir: .
-  --sha256: a5gfAXiAVYaaNN5V91U0wpeUOWlfH/LrtHrH36peSFM=
+  --sha256: Ll8YXVgVnGgIu0rCR5CZJhiqeoxayk8VrPJ4cdU9zMc=
 
 source-repository-package
   type: git

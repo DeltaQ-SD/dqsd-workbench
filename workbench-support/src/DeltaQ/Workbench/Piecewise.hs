@@ -9,14 +9,14 @@ module DeltaQ.Workbench.Piecewise
 --   , firstToFinish
 --   , lastToFinish
   , displayCDF
-  , displayPMF
+  , displayPDF
 --   , constructCDF
 --   , constructLinearCDF
   , probMass
 --  , multiWeightedChoice
   , module WB
   , plotCDFs
-  , plotPMFs
+  , plotPDFs
 
   )
 where
@@ -49,8 +49,8 @@ constructDelta = P.constructDelta
 displayCDF :: Int -> DeltaQ Double -> [(Double, Double)]
 displayCDF = P.displayCDF
 
-displayPMF :: Int -> DeltaQ Double -> [(Double, Double)]
-displayPMF  = P.displayPDF
+displayPDF :: Int -> DeltaQ Double -> [(Double, Double)]
+displayPDF  = P.displayPDF
 
 --   , constructCDF
 --   , constructLinearCDF
@@ -81,15 +81,15 @@ plotCDFs n t dqs =
    where
      genSamples = displayCDF
 
-plotPMFs :: Int               -- ^ Sample points for graphing
+plotPDFs :: Int               -- ^ Sample points for graphing
          -> String            -- ^ plot title
          -> [(String, DeltaQ Double)] -- ^ list of named ∆Q's
          -> Renderable ()
-plotPMFs n t dqs =
+plotPDFs n t dqs =
   toRenderable $ do
     layout_title .= t
     layout_x_axis . laxis_title .= "Delay (s)"
     layout_y_axis . laxis_title .= "Probability Mass Density"
     mapM (\(a,b) -> plot $ line a [genSamples n b]) dqs
    where
-     genSamples = displayPMF
+     genSamples = displayPDF
