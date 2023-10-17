@@ -21,9 +21,13 @@ let
  #
  # This is where the additional packages are brought into scope
  #
-              workbench-support = localAddPkg "workbench-support" ./workbench-support {};
-              dqsd-classes      = localAddPkg "dqsq-classes" sources.dqsd-classes {};
-              dqsd-piecewise-poly = localAddPkg "dqsq-piecewise-poly" sources.dqsd-piecewise-poly {};
+              workbench-support
+                     = localAddPkg "workbench-support" ./workbench-support {};
+              DeltaQ = localAddPkg "DeltaQ" sources.DQSupport {};
+              dqsd-classes
+                     = localAddPkg "dqsq-classes" sources.dqsd-classes {};
+              dqsd-piecewise-poly
+                     = localAddPkg "dqsq-piecewise-poly" sources.dqsd-piecewise-poly {};
  #
             };
           };

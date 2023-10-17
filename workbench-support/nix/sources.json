@@ -1,4 +1,10 @@
 {
+    "DQSupport": {
+        "branch": "1-support-of-qsd-workbench",
+        "repo": "https://github.com/DeltaQ-SD/pnsol-deltaq-clone.git",
+        "rev": "aba01aa5acf70333bc692f10ee655b25f935aeac",
+        "type": "git"
+    },
     "IHaskell": {
         "branch": "dqsd-patches",
         "description": "A Haskell kernel for the Jupyter project.",

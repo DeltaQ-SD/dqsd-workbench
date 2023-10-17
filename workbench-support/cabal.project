@@ -20,3 +20,9 @@ source-repository-package
   tag: 8fb4ad7682340215231c9c4eb83e0614fcba4e23
   subdir: ihaskell-display/ihaskell-charts
   --sha256: 1kavj2a4zdrj791kyin4smrpgpqi1hhhqykzqa5w4bpa4glik87m
+
+source-repository-package
+  type: git
+  location: https://github.com/DeltaQ-SD/pnsol-deltaq-clone.git
+  tag: aba01aa5acf70333bc692f10ee655b25f935aeac
+  --sha256: k7wUMgZHDY9yUY+7rWP4iB3Ke7tkqb4a/BTmJcDBDGs=
