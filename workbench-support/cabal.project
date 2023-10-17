@@ -10,6 +10,13 @@ source-repository-package
 source-repository-package
   type: git
   location: https://github.com/DeltaQ-SD/dqsd-piecewise-poly.git
-  tag: 61bf285818fb54fd7d41c86285306983d86d1273
+  tag: 920cdc367c716644927bd58856234961b7051112
   subdir: .
-  --sha256: obFntmtMFr5pxvOEGQ4uB8+ulQIphNsNjRGD98Uj5fU=
+  --sha256: a5gfAXiAVYaaNN5V91U0wpeUOWlfH/LrtHrH36peSFM=
+
+source-repository-package
+  type: git
+  location: https://github.com/DeltaQ-SD/IHaskell.git
+  tag: 8fb4ad7682340215231c9c4eb83e0614fcba4e23
+  subdir: ihaskell-display/ihaskell-charts
+  --sha256: 1kavj2a4zdrj791kyin4smrpgpqi1hhhqykzqa5w4bpa4glik87m

@@ -65,10 +65,11 @@ library
     import:           warnings
 
     -- Modules exported by the library.
-    exposed-modules:  DeltaQ.Workbench.Piecewise
+    exposed-modules:  DeltaQ.Workbench.Common
+                      DeltaQ.Workbench.Piecewise
 
     -- Modules included in this library but not exported.
-    other-modules:    DeltaQ.Workbench.Common
+    -- other-modules:   
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
@@ -78,6 +79,9 @@ library
     build-depends:    base >= 4.17.1.0
                     , dqsd-classes
                     , dqsd-piecewise-poly
+                    , Chart
+                    , ihaskell
+                    , ihaskell-charts
 
     -- Directories containing source files.
     hs-source-dirs:   src

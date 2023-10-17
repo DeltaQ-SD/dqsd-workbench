@@ -20,7 +20,7 @@
     "dqsd-piecewise-poly": {
         "branch": "main",
         "repo": "https://github.com/DeltaQ-SD/dqsd-piecewise-poly.git",
-        "rev": "61bf285818fb54fd7d41c86285306983d86d1273",
+        "rev": "920cdc367c716644927bd58856234961b7051112",
         "type": "git"
     },
     "haskellNix": {
