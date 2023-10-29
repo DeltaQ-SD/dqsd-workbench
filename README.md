@@ -21,7 +21,6 @@ like:
 │   └── ...
 ├── dqsd-workbench
 └── run-my-workbench
-
 ```
 
 You will need to create the directory `Notebooks` and the wrapper script `run-my-workbench`
@@ -29,10 +28,19 @@ You will need to create the directory `Notebooks` and the wrapper script `run-my
 ### Installation steps
 
 In your target directory clone the repository
-```git clone https://github.com/DeltaQ-SD/dqsd-workbench.git```
+```
+git clone https://github.com/DeltaQ-SD/dqsd-workbench.git
+```
 
 Make the `Notebooks` directory
-```mkdir Notebooks```
+```
+mkdir Notebooks
+```
+
+At this point you might wish to copy the example notebooks from
+`dqsd-workbench/ExampleNotebooks` into your own notebook directory.
+
+You then want to create a wrapper script (example below).
 
 ## Example wrapper script
 
@@ -54,3 +62,13 @@ fi
 (cd ${NOTEBOOKDIR}; ${PKGDIR}/bin/jupyter lab --no-browser $*)
 ```
 
+## Upgrading
+
+Note that the build scripts use a symbolic link to cache built notebook. After upgrading the repository:
+```
+cd dqsd-workbench; git pull
+```
+
+you will want to remove the `iHaskell` symbolic link in the `dqsd-workbenc`,
+this will cause the updated version to be built when your wrapper script is next
+run.
